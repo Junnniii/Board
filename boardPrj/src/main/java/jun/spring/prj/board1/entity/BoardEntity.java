@@ -2,27 +2,32 @@ package jun.spring.prj.board1.entity;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 public class BoardEntity {
 	
 	private int id;
 	private String title;
-	private String writerId;
-	private Date regDate;
+	private String writer_id;
+	private Date regdate;
 	private String content;
 	private int hit;
 	private String files;
+	private boolean pub;
 	
-	public BoardEntity(int id, String title, String writerId, Date regDate, String content, int hit, String files) {
+	
+	public BoardEntity(int id, String title, String writer_id, Date regdate, String content, int hit, String files,
+			boolean pub) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.writerId = writerId;
-		this.regDate = regDate;
+		this.writer_id = writer_id;
+		this.regdate = regdate;
 		this.content = content;
 		this.hit = hit;
 		this.files = files;
+		this.pub = pub;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -35,17 +40,17 @@ public class BoardEntity {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getWriterId() {
-		return writerId;
+	public String getWriter_id() {
+		return writer_id;
 	}
-	public void setWriterId(String writerId) {
-		this.writerId = writerId;
+	public void setWriter_id(String writer_id) {
+		this.writer_id = writer_id;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	public String getContent() {
 		return content;
@@ -65,9 +70,17 @@ public class BoardEntity {
 	public void setFiles(String files) {
 		this.files = files;
 	}
+	public boolean isPub() {
+		return pub;
+	}
+	public void setPub(boolean pub) {
+		this.pub = pub;
+	}
 	@Override
 	public String toString() {
-		return "BoardEntity [id=" + id + ", title=" + title + ", writerId=" + writerId + ", regDate=" + regDate
-				+ ", content=" + content + ", hit=" + hit + ", files=" + files + "]";
+		return "BoardEntity [id=" + id + ", title=" + title + ", writer_id=" + writer_id + ", regdate=" + regdate
+				+ ", content=" + content + ", hit=" + hit + ", files=" + files + ", pub=" + pub + "]";
 	}
+	
+	
 }

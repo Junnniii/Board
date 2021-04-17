@@ -12,11 +12,11 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	<context:annotation-config />
 	<context:component-scan base-package="jun.spring.prj" />
-	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource" destroy-method="clone">
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource" >
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
-		<property name="username" value="scott" />
-		<property name="password" value="tiger" />
+		<property name="username" value="HJBOARD" />
+		<property name="password" value="1234" />
 	</bean>
 	<!--Bean 객체를 생성한다. -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">

@@ -35,7 +35,9 @@
  		where deptno = #{deptno}
  	</delete>
  </mapper> -->
- <mapper namespace="jun.spring.prj.board1">
- 	<select id="getList" resultType="BoardEntity">
+ <mapper namespace="jun.spring.prj.board1.entity">
+ 	<select id="getList" resultType="BoardViewEntity">
+ 		select * from board1_view
+ 		<!--  where #{field} like '#{query}' and num between #{start} and #{end} -->
  	</select>
  </mapper>

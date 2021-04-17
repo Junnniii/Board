@@ -6,9 +6,10 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSessionException;
 
 import jun.spring.prj.board1.entity.BoardEntity;
+import jun.spring.prj.board1.entity.BoardViewEntity;
 
 public interface BoardService {
-	List<BoardEntity> getList(int page, String field, String query) throws ClassNotFoundException, SQLException;
+	List<BoardViewEntity> getList(int page, String field, String query) throws ClassNotFoundException, SQLException;
 	
 	BoardEntity read(int id) throws ClassNotFoundException, SQLException;
 	

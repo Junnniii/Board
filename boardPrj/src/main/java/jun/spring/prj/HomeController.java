@@ -24,7 +24,7 @@ import jun.spring.prj.service.DeptDaoService;
 public class HomeController {
 	
 	@Autowired
-	private DeptDaoService service;
+	private DeptDaoService daoService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
@@ -40,7 +40,7 @@ public class HomeController {
 //		String formattedDate = dateFormat.format(date);
 //		
 //		model.addAttribute("serverTime", formattedDate );
-		List<DeptDTO> list = service.selelcAll();
+		List<DeptDTO> list = daoService.selelcAll();
 		ModelAndView mv = new ModelAndView();
 		if(list.isEmpty()) {
 			System.out.println("출력할 데이터x");
@@ -49,7 +49,7 @@ public class HomeController {
 		{
 			for (DeptDTO deptDTO : list)
 			{
-				System.out.println(deptDTO);
+//				System.out.println(deptDTO);
 			}
 		}
 		mv.setViewName("index");
