@@ -13,15 +13,16 @@ import jun.spring.prj.board1.entity.BoardViewEntity;
 import jun.spring.prj.board1.service.BoardService;
 import jun.spring.prj.dto.DeptDTO;
 
-@Controller
+@Controller("boardController")
+@RequestMapping("/")
 public class BoardController {
 
 	@Autowired
 	private BoardService service;
 	
-	@RequestMapping("/boardList")
+	@RequestMapping("boardList")
 	public ModelAndView test() throws ClassNotFoundException, SQLException {
-		List<BoardViewEntity> list = service.getList(1, "", "");
+		List<BoardViewEntity> list = service.getList(1, "writer_id", "한준");
 		if(list.isEmpty()) {
 			System.out.println("출력할 데이터x");
 		}
@@ -29,6 +30,7 @@ public class BoardController {
 		{
 			for (BoardViewEntity entity : list)
 			{
+				System.out.println("11");
 				System.out.println(entity);
 			}
 		}

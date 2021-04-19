@@ -40,20 +40,20 @@ public class HomeController {
 //		String formattedDate = dateFormat.format(date);
 //		
 //		model.addAttribute("serverTime", formattedDate );
-		List<DeptDTO> list = daoService.selelcAll();
+//		List<DeptDTO> list = daoService.selelcAll();
 		ModelAndView mv = new ModelAndView();
-		if(list.isEmpty()) {
-			System.out.println("출력할 데이터x");
-		}
-		else
-		{
-			for (DeptDTO deptDTO : list)
-			{
-//				System.out.println(deptDTO);
-			}
-		}
-		mv.setViewName("index");
-		mv.addObject("list",list);
+//		if(list.isEmpty()) {
+//			System.out.println("출력할 데이터x");
+//		}
+//		else
+//		{
+//			for (DeptDTO deptDTO : list)
+//			{
+////				System.out.println(deptDTO);
+//			}
+//		}
+//		mv.setViewName("index");
+//		mv.addObject("list",list);
 	
 		
 		return mv;

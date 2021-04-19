@@ -16,7 +16,7 @@ public class BoardEntity {
 	private boolean pub;
 	
 	
-	public BoardEntity(int id, String title, String writer_id, Date regdate, String content, int hit, String files,
+	public BoardEntity(int id, String title, String writer_id, String content,Date regdate,  int hit, String files,
 			boolean pub) {
 		super();
 		this.id = id;

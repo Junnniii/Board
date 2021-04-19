@@ -3,7 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	
+	<settings> 
+		<setting name="cacheEnabled" value="false" /> 
+		<setting name="jdbcTypeForNull" value="NULL" /> 
+	</settings>
 	<typeAliases>
 		<typeAlias alias="BoardViewEntity" type="jun.spring.prj.board1.entity.BoardViewEntity"/>
+		<typeAlias alias="QueryVO" type="jun.spring.prj.board1.service.jdbc.QueryVO"/>
 	</typeAliases>
+	
+
+
 </configuration>

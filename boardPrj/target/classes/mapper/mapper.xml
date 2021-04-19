@@ -14,7 +14,7 @@
  		into dept (deptno, dname, loc)
  		values(#{deptno}, #{dname}, #{loc})
  	</insert>
- 	
+ 	 
  	<select id="select" parameterType="DeptDTO" resultType="DeptDTO">
  		select
  		deptno, dname, loc
@@ -35,9 +35,21 @@
  		where deptno = #{deptno}
  	</delete>
  </mapper> -->
- <mapper namespace="jun.spring.prj.board1.entity">
- 	<select id="getList" resultType="BoardViewEntity">
- 		select * from board1_view
- 		<!--  where #{field} like '#{query}' and num between #{start} and #{end} -->
+ <mapper namespace="jun.spring.prj.board1">
+ 	<select id="getList" resultType="BoardViewEntity" parameterType="jun.spring.prj.board1.service.jdbc.QueryVO">
+ 		select * from board1_view where 
+ 		<if test="field=='title' &amp;&amp; query != null">
+ 		title like '%'||#{query}||'%' and 
+ 		</if>
+ 		<if test="field=='writer_id' &amp;&amp; query != null">
+ 		writer_id like '%'||#{query}||'%' and 
+ 		</if>
+ 		num between #{start} and #{end}
+ 		<!-- <trim prefix="'%" prefixOverrides="OR" suffix="%'">
+ 		<if test="query != null">
+ 		#{query} 
+ 		</if>
+ 		</trim> -->
+ 		
  	</select>
  </mapper>

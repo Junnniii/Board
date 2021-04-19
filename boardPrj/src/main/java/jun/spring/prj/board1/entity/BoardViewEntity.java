@@ -9,15 +9,19 @@ public class BoardViewEntity extends BoardEntity{
 
 	private int num;
 
-	public BoardViewEntity(int id, String title, String writer_id, Date regdate, String content, int hit, String files,
-			boolean pub, int num) {
-		super(id, title, writer_id, regdate, content, hit, files, pub);
+
+
+	public BoardViewEntity(int num,int id, String title, String writer_id, String content, Date regdate, int hit, String files,
+			boolean pub ) {
+		super(id, title, writer_id, content, regdate, hit, files, pub);
 		this.num = num;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "BoardViewEntity [num=" + num + "]"+getId();
+		return "BoardViewEntity [num=" + num + "]"+super.toString();
 	}
 	
 	

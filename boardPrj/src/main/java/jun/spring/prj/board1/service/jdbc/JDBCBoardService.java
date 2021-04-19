@@ -23,15 +23,10 @@ public class JDBCBoardService implements BoardService {
 	
 	@Override
 	public List<BoardViewEntity> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
-		int start = 1 + (page-1) * 10;
-		int end = page * 10;
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("start",start);
-		map.put("end",end);
-		map.put("field",field);
-		map.put("query", query);
+		QueryVO qvo = new QueryVO(field, query, page);
+		System.out.println(qvo.toString());
 		
-		return sqlSessionTemplate.selectList("getList",map);
+		return sqlSessionTemplate.selectList("getList",qvo);
 	}
 
 	@Override
