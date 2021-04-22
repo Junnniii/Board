@@ -14,7 +14,7 @@ import jun.spring.prj.board1.service.BoardService;
 import jun.spring.prj.dto.DeptDTO;
 
 @Controller("boardController")
-@RequestMapping("/board")
+@RequestMapping("/board1")
 public class BoardController {
 
 	@Autowired
