@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+table {
+	position: relative;
+	left: 100px;
+	top : 50px;	
+}
+
+td {
+	text-align: center;
+}
+tbody td{
+	border-bottom: 1px dashed #708090;
+}
+.text-align-left{
+	text-align : left;
+}
+.table_header{
+	background-color :#483D8B;
+	color : white;
+}
+.w60 {
+	width : 60px;
+}
+.h60 {
+	height: 60px;
+}
+.w100 {
+	width : 100px;
+}
+.w450 {
+	width : 450px;
+}
+.expand {
+	flex-grow: 1;
+}
+.title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
