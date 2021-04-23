@@ -14,7 +14,7 @@ import jun.spring.prj.board1.service.BoardService;
 import jun.spring.prj.dto.DeptDTO;
 
 @Controller("boardController")
-@RequestMapping("/board1")
+@RequestMapping("/board")
 public class BoardController {
 
 	@Autowired
@@ -22,8 +22,8 @@ public class BoardController {
 	
 	@RequestMapping("/list")
 	public ModelAndView test() throws ClassNotFoundException, SQLException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("board/list");
+		ModelAndView mv = new ModelAndView("board.list");
+		
 		List<BoardViewEntity> list = service.getList(1, "writer_id", "한준");
 		if(list.isEmpty()) {
 			System.out.println("출력할 데이터x");
