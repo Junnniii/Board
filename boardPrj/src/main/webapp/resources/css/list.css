@@ -35,7 +35,12 @@ tbody td{
 	flex-grow: 1;
 }
 .title {
+	text-indent : 2em;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	
+}
+.title:hover {
+	text-decoration: underline;
 }

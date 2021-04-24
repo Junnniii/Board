@@ -1,8 +1,6 @@
 package jun.spring.prj.board1.entity;
 
-import java.util.Date;
-
-import org.springframework.stereotype.Component;
+import java.sql.Date;
 
 public class BoardViewEntity extends BoardEntity{
 	
