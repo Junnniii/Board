@@ -16,13 +16,13 @@ import jun.spring.prj.board1.service.BoardService;
 import jun.spring.prj.dto.DeptDTO;
 
 @Controller("boardController")
-@RequestMapping("/board")
+@RequestMapping("/board/1")
 public class BoardController {
 
 	@Autowired
 	private BoardService service;
 	
-	@RequestMapping(value="/1/list",method = RequestMethod.GET)
+	@RequestMapping(value="/list",method = RequestMethod.GET)
 	public ModelAndView getList() throws ClassNotFoundException, SQLException {
 		ModelAndView mv = new ModelAndView("board.list");
 		
@@ -42,12 +42,14 @@ public class BoardController {
 		return mv;
 	}
 	
-	@RequestMapping(value="/1/detail",method = RequestMethod.GET)
-	public ModelAndView getDetail(int id)
+	@RequestMapping(value="/detail",method = RequestMethod.GET)
+	public ModelAndView getDetail(int id) throws ClassNotFoundException, SQLException
 	{
-		ModelAndView mv = new ModelAndView("");
-		System.out.println("test id : "+id);
-		return null;
+		ModelAndView mv = new ModelAndView("board.detail");
+		BoardEntity entity = service.getBoard(id);
+		System.out.println(entity.toString());
+		mv.addObject("board",entity);
+		return mv;
 		
 	}
 }

@@ -11,7 +11,7 @@ import jun.spring.prj.board1.entity.BoardViewEntity;
 public interface BoardService {
 	List<BoardViewEntity> getList(int page, String field, String query) throws ClassNotFoundException, SQLException;
 	
-	BoardEntity read(int id) throws ClassNotFoundException, SQLException;
+	BoardEntity getBoard(int id) throws ClassNotFoundException, SQLException;
 	
 	int getCount() throws ClassNotFoundException, SQLException;
 	

@@ -45,11 +45,9 @@
  		writer_id like '%'||#{query}||'%' and 
  		</if>
  		num between #{start} and #{end}
- 		<!-- <trim prefix="'%" prefixOverrides="OR" suffix="%'">
- 		<if test="query != null">
- 		#{query} 
- 		</if>
- 		</trim> -->
- 		
+ 	</select>
+ 	
+ 	<select id="getBoard" resultType="BoardEntity">
+ 		select * from board1 where id = #{id}
  	</select>
  </mapper>

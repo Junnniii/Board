@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="page_type" content="np-template-header-footer-from-plugin">
 <title>HJ BOARD</title>
-<link rel="stylesheet" href="/resources/css/list.css">
+<link rel="stylesheet" href="/resources/css/content.css?after">
 <link rel="stylesheet" href="/resources/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="/resources/css/About.css" media="screen">
 <script class="u-script" type="text/javascript"

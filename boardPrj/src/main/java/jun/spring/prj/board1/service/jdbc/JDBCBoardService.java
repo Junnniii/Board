@@ -9,12 +9,13 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import jun.spring.prj.board1.entity.BoardEntity;
 import jun.spring.prj.board1.entity.BoardViewEntity;
 import jun.spring.prj.board1.service.BoardService;
 
-@Repository
+@Service
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class JDBCBoardService implements BoardService {
 
@@ -28,9 +29,8 @@ public class JDBCBoardService implements BoardService {
 	}
 
 	@Override
-	public BoardEntity read(int id) throws ClassNotFoundException, SQLException {
-		
-		return null;
+	public BoardEntity getBoard(int id) throws ClassNotFoundException, SQLException {
+		return sqlSessionTemplate.selectOne("getBoard",id);
 	}
 
 	@Override
