@@ -50,4 +50,9 @@
  	<select id="getBoard" resultType="BoardEntity">
  		select * from board1 where id = #{id}
  	</select>
+ 	
+ 	<insert id="regBoard" parameterType="BoardEntity">
+ 		insert into board1 (id,title,writer_id,content,files) values (SEQ_ID.nextval,#{title},#{writer_id},#{content},#{files})
+ 	</insert>
+ 	
  </mapper>

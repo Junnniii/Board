@@ -3,11 +3,18 @@ package jun.spring.prj.board1.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import jun.spring.prj.board1.entity.BoardEntity;
@@ -50,6 +57,24 @@ public class BoardController {
 		System.out.println(entity.toString());
 		mv.addObject("board",entity);
 		return mv;
+		
+	}
+	
+	@GetMapping(value = "/reg")
+	@ResponseBody
+	public ModelAndView regBoard( ) {
+		ModelAndView mv = new ModelAndView("board.reg");
+		return mv;
+	}
+	
+	@PostMapping(value = "/regboard")
+	public String regBoard(@ModelAttribute BoardEntity entity) throws ClassNotFoundException, SQLException {
+
+		int i = service.insert(entity);
+		System.out.println("실행결과"+i);
+		
+//		entity.setFiles(file.getName());
+		return "board.list";
 		
 	}
 }

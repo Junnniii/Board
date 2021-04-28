@@ -3,7 +3,7 @@
 table {
 	position: relative;
 	left: 100px;
-	top: 50px;
+	top: 40px;
 }
 
 td {
@@ -54,14 +54,31 @@ tbody td {
 	text-decoration: underline;
 }
 
+.write-btn {
+	width : 60px;
+	/* position: absolute; */
+	top: 50px;
+	left: 830px;
+}
+.write-btn a{
+	padding : 5px;
+	background-color: #6495ED;
+	color : #ffffff;
+}
 /* ========================================== DETAIL ============================================= */
 .board {
 	width: 800px;
 	height : 550px;
 	margin-left: 30px;
 	margin-top: 20px;
+	
 }
 
+.board-foot {
+	width : 800px;
+	margin-left: 30px;
+	border-top: 2px dashed #bcbcbc;
+}
 .board div {
 	margin-bottom: 3px;
 }
@@ -103,4 +120,25 @@ tbody td {
 }
 .content {
 	margin-top: 10px;
+}
+
+.board-page {
+	display : inline-block;
+	width: 50%;
+	
+}
+.board-btn {
+	display : inline-block;
+	width: 50%;
+	vertical-align:right;
+}
+.board-foot a {
+	background-color: #008040;
+	color : white;
+}
+
+.search-list {
+	position : relative;
+	left: 550px;
+	width: 450px;
 }

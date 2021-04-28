@@ -26,6 +26,18 @@ public class BoardEntity {
 		this.files = files;
 		this.pub = pub;
 	}
+	
+	public BoardEntity() {
+		this.id = 0;
+		this.title = "";
+		this.writer_id="";
+		this.regdate = null;
+		this.content = "";
+		this.hit = 0;
+		this.files = "";
+		this.pub = false;
+	}
+
 	public int getId() {
 		return id;
 	}

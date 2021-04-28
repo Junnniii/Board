@@ -41,8 +41,9 @@ public class JDBCBoardService implements BoardService {
 
 	@Override
 	public int insert(BoardEntity boardEntity) throws ClassNotFoundException, SQLException {
-	
-		return 0;
+		System.out.println(boardEntity.toString());
+		return sqlSessionTemplate.insert("regBoard",boardEntity);
+		
 	}
 
 	@Override
