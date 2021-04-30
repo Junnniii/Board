@@ -2,6 +2,8 @@ package jun.spring.prj.board1.entity;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class BoardViewEntity extends BoardEntity{
 	
 

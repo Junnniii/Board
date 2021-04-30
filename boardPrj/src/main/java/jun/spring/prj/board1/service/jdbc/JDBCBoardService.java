@@ -1,14 +1,12 @@
 package jun.spring.prj.board1.service.jdbc;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import jun.spring.prj.board1.entity.BoardEntity;
@@ -34,10 +32,11 @@ public class JDBCBoardService implements BoardService {
 	}
 
 	@Override
-	public int getCount() throws ClassNotFoundException, SQLException {
-		
-		return 0;
+	public int countHit(int id) throws ClassNotFoundException, SQLException {
+		return sqlSessionTemplate.update("countHit", id);
 	}
+
+
 
 	@Override
 	public int insert(BoardEntity boardEntity) throws ClassNotFoundException, SQLException {
@@ -57,5 +56,6 @@ public class JDBCBoardService implements BoardService {
 	
 		return 0;
 	}
+
 
 }

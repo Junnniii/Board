@@ -5,22 +5,24 @@
 		
 		<form action="regboard" method="post" enctype="multipart/form-data">
 		
-			<div>제목 
+			<div class="line">
+				<span class="reg-tag">제목</span> 
 				<input type="text" name="title" class="title-text">
 			</div>
 			
-			<div>
-				<span>작성자 
+			<div class="line">
+				<span> <span class="reg-tag">작성자</span>
 					<input type="text" name="writer_id" class="writer-text">		
 				</span> 
-				<span>첨부파일 
-					<input type="file" name="file">
+				
+			</div>
+			<div class="line">
+				<span>	 <span class="reg-tag">첨부파일</span> 
+					<input type="file" name="upload_file">
 				</span> 
 			</div>
-			
 			<div>
-				<textarea name="content" >
-				</textarea>
+				<textarea class="contents" name="content" wrap="virtual" ></textarea>
 			</div>
 			
 			<div>

@@ -13,9 +13,12 @@
 
 		</div>
 		<div class="head-file">
-			<span class="file">첨부파일</span> <span class="">${board.files}</span>
+			<span class="file">첨부파일</span> 
+			<span class="">
+				<a href="/file/download?filename=${board.files}">${board.files}</a>
+			</span>
 		</div>
-		<div class="content">${board.content }</div>
+		<div class="content">${board.content}</div>
 
 
 	</div>

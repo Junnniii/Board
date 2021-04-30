@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+main {
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
 table {
 	position: relative;
 	left: 100px;
@@ -55,30 +60,31 @@ tbody td {
 }
 
 .write-btn {
-	width : 60px;
+	width: 60px;
 	/* position: absolute; */
 	top: 50px;
 	left: 830px;
 }
-.write-btn a{
-	padding : 5px;
+
+.write-btn a {
+	padding: 5px;
 	background-color: #6495ED;
-	color : #ffffff;
+	color: #ffffff;
 }
 /* ========================================== DETAIL ============================================= */
 .board {
 	width: 800px;
-	height : 550px;
+	height: 550px;
 	margin-left: 30px;
 	margin-top: 20px;
-	
 }
 
 .board-foot {
-	width : 800px;
+	width: 800px;
 	margin-left: 30px;
 	border-top: 2px dashed #bcbcbc;
 }
+
 .board div {
 	margin-bottom: 3px;
 }
@@ -92,11 +98,11 @@ tbody td {
 	position: relative;
 	left: -15px;
 	text-align: center;
-	height : 25px;
+	height: 25px;
 }
 
 .head-file {
-	border-top: 2px dashed #bcbcbc; 
+	border-top: 2px dashed #bcbcbc;
 	border-bottom: 2px dashed #bcbcbc;
 }
 
@@ -108,37 +114,75 @@ tbody td {
 
 .file {
 	text-align: center;
-	width : 100px;
-	
-	display : block;
+	width: 100px;
+	display: inline-block;
 	background-color: #98FB98;
 }
+
 .board_info {
 	display: inline-block;
 	width: 150px;
 	text-align: left;
 }
+
 .content {
 	margin-top: 10px;
 }
 
 .board-page {
-	display : inline-block;
+	display: inline-block;
 	width: 50%;
-	
 }
+
 .board-btn {
-	display : inline-block;
+	display: inline-block;
 	width: 50%;
-	vertical-align:right;
+	vertical-align: right;
 }
+
 .board-foot a {
 	background-color: #008040;
-	color : white;
+	color: white;
+	padding: 1px;
+	margin: 3px;
 }
 
 .search-list {
-	position : relative;
+	position: relative;
 	left: 550px;
 	width: 450px;
+}
+/*======================================== reg========================= */
+.reg-tag {
+	display: inline-block;
+	width: 100px;
+	height: 32px;
+	padding: 2px;
+	background-color: #98FB98;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.title-text {
+	width: 550px;
+}
+
+.writer-text {
+	width: 200px;
+}
+
+textarea {
+	margin-top: 10px;
+	width: 655px;
+	height: 430px;
+	box-sizing: border-box;
+	border: solid 2px #1E90FF;
+	border-radius: 5px;
+}
+
+.line {
+	width: 655px; 
+	border-bottom : 1px dashed #bcbcbc;
+	margin-bottom: 2px;
+	border-bottom: 1px dashed #bcbcbc;
 }

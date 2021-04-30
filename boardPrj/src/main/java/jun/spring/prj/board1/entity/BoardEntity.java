@@ -2,20 +2,21 @@ package jun.spring.prj.board1.entity;
 
 import java.sql.Date;
 
+
 public class BoardEntity {
 	
-	private int id;
+	private Integer id;
 	private String title;
 	private String writer_id;
 	private Date regdate;
 	private String content;
-	private int hit;
+	private Integer hit;
 	private String files;
-	private boolean pub;
+	private Boolean pub;
 	
 	
-	public BoardEntity(int id, String title, String writer_id, String content,Date regdate,  int hit, String files,
-			boolean pub) {
+	public BoardEntity(Integer id, String title, String writer_id, String content,Date regdate, Integer hit, String files,
+			Boolean pub) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -26,71 +27,97 @@ public class BoardEntity {
 		this.files = files;
 		this.pub = pub;
 	}
-	
-	public BoardEntity() {
-		this.id = 0;
-		this.title = "";
-		this.writer_id="";
-		this.regdate = null;
-		this.content = "";
-		this.hit = 0;
-		this.files = "";
-		this.pub = false;
-	}
 
-	public int getId() {
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
 	public String getTitle() {
 		return title;
 	}
+
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+
 	public String getWriter_id() {
 		return writer_id;
 	}
+
+
 	public void setWriter_id(String writer_id) {
 		this.writer_id = writer_id;
 	}
+
+
 	public Date getRegdate() {
 		return regdate;
 	}
+
+
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+
+
 	public String getContent() {
 		return content;
 	}
+
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getHit() {
+
+
+	public Integer getHit() {
 		return hit;
 	}
-	public void setHit(int hit) {
+
+
+	public void setHit(Integer hit) {
 		this.hit = hit;
 	}
+
+
 	public String getFiles() {
 		return files;
 	}
+
+
 	public void setFiles(String files) {
 		this.files = files;
 	}
-	public boolean isPub() {
+
+
+	public Boolean getPub() {
 		return pub;
 	}
-	public void setPub(boolean pub) {
+
+
+	public void setPub(Boolean pub) {
 		this.pub = pub;
 	}
+
+
 	@Override
 	public String toString() {
 		return "BoardEntity [id=" + id + ", title=" + title + ", writer_id=" + writer_id + ", regdate=" + regdate
 				+ ", content=" + content + ", hit=" + hit + ", files=" + files + ", pub=" + pub + "]";
 	}
+	
+	
+
+	
 	
 	
 }

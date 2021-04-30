@@ -4140,7 +4140,7 @@ legend {
   white-space: normal;
 }
 textarea {
-  overflow: auto;
+ /*  overflow: auto; */
 }
 [type="checkbox"],
 [type="radio"] {
