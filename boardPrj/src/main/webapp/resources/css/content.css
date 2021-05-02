@@ -60,13 +60,14 @@ tbody td {
 }
 
 .write-btn {
-	width: 60px;
-	/* position: absolute; */
-	top: 50px;
-	left: 830px;
+	
 }
 
 .write-btn a {
+	width: 60px;
+	position: absolute;
+	top: 50px;
+	left: 830px;
 	padding: 5px;
 	background-color: #6495ED;
 	color: #ffffff;

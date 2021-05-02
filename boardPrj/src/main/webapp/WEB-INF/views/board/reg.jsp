@@ -12,7 +12,7 @@
 			
 			<div class="line">
 				<span> <span class="reg-tag">작성자</span>
-					<input type="text" name="writer_id" class="writer-text">		
+					<input type="text" maxlength="6" name="writer_id" class="writer-text">		
 				</span> 
 				
 			</div>

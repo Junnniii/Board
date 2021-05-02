@@ -29,8 +29,11 @@
 		 <a href="">다음글</a> 
 		</div>
 		<div class="board-btn">
-			 <a href="update">수정</a> 
-			 <a href="delete">삭제</a>
+	
+			 
+			 <a href="edit?id=${board.id}">수정</a>
+	
+			 <a href="delete?id=${board.id}">삭제</a>
 		</div>
 	</div>
 

@@ -59,4 +59,20 @@
  		update board1 set hit = hit + 1 
  		where id = #{id}
  	</update>
+ 	<update id="updateBoard" parameterType="BoardEntity">
+ 		update board1 set 
+ 		title = #{title},
+ 		writer_id = #{writer_id},
+ 		content = #{content} 
+ 		<if test="files!=''">
+ 		,files = #{files} 
+ 		</if> 
+ 		where id = #{id}
+ 	</update>
+ 	
+ 	<delete id="deleteBoard">
+ 		delete from 
+ 		board1 
+ 		where id = #{id}
+ 	</delete>
  </mapper>

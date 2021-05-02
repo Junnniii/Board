@@ -29,6 +29,14 @@ public class BoardEntity {
 	}
 
 
+
+
+
+	public BoardEntity() {
+		super();
+	}
+
+
 	public Integer getId() {
 		return id;
 	}

@@ -48,13 +48,13 @@ public class JDBCBoardService implements BoardService {
 	@Override
 	public int update(BoardEntity boardEntity) throws ClassNotFoundException, SQLException {
 	
-		return 0;
+		return sqlSessionTemplate.update("updateBoard", boardEntity);
 	}
 
 	@Override
 	public int delete(int id) throws ClassNotFoundException, SQLException {
 	
-		return 0;
+		return sqlSessionTemplate.delete("deleteBoard",id); 
 	}
 
 

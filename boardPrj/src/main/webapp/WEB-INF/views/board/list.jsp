@@ -41,6 +41,7 @@
 				</tbody>
 			</table>
 			<div class="write-btn">
+				<span></span>
 				<a href="reg">글쓰기</a>
 			</div>
 			<div>
