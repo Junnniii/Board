@@ -13,6 +13,8 @@ public interface BoardService {
 	
 	BoardEntity getBoard(int id) throws ClassNotFoundException, SQLException;
 	
+	int countLines() throws ClassNotFoundException, SQLException;
+	
 	int insert(BoardEntity boardEntity) throws ClassNotFoundException, SQLException;
 	
 	int update(BoardEntity boardEntity) throws ClassNotFoundException, SQLException;
@@ -21,5 +23,5 @@ public interface BoardService {
 	
 	int delete(int id) throws ClassNotFoundException, SQLException;
 
-
+	
 }

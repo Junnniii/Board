@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <main>
 	<div class="u-container-style u-layout-cell u-size-42 u-layout-cell-2">
 		<div class="u-container-layout u-container-layout-2">
@@ -39,9 +40,28 @@
 
 
 				</tbody>
+				
+				
+				
 			</table>
+			
+			<c:set var="page" value="${(empty param.p) ? 1 : param.p }"/>
+			<c:set var="startNum" value="${page-(page-1)%5 }"/>
+			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"/>
+			<c:if test="${startNum > 1}">
+				<a href="?p=${startNum-1}&f=${param.f}&q=${param.q}" class="prev-btn">이전</a>
+			</c:if>
+			<div class="page-btn">
+				<c:forEach var="i" begin="0" end="4">
+					<c:if test="${(startNum+i) <= lastNum }">
+						<a href="?p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a>
+					</c:if>
+				</c:forEach>	
+			</div>
+			<c:if test="${startNum+5 <= lastNum}">
+			<a href="?p=${startNum+5}&f=${param.f}&q=${param.q}" class="next-btn">다음</a>
+			</c:if>
 			<div class="write-btn">
-				<span></span>
 				<a href="reg">글쓰기</a>
 			</div>
 			<div>

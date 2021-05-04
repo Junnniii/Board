@@ -26,17 +26,21 @@ public class JDBCBoardService implements BoardService {
 		return sqlSessionTemplate.selectList("getList",qvo);
 	}
 
+	
 	@Override
 	public BoardEntity getBoard(int id) throws ClassNotFoundException, SQLException {
 		return sqlSessionTemplate.selectOne("getBoard",id);
+	}
+	
+	@Override
+	public int countLines() throws ClassNotFoundException, SQLException {
+		return sqlSessionTemplate.selectOne("countLines");
 	}
 
 	@Override
 	public int countHit(int id) throws ClassNotFoundException, SQLException {
 		return sqlSessionTemplate.update("countHit", id);
 	}
-
-
 
 	@Override
 	public int insert(BoardEntity boardEntity) throws ClassNotFoundException, SQLException {
@@ -56,6 +60,8 @@ public class JDBCBoardService implements BoardService {
 	
 		return sqlSessionTemplate.delete("deleteBoard",id); 
 	}
+
+	
 
 
 }

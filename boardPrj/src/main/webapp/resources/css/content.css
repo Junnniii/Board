@@ -59,9 +59,7 @@ tbody td {
 	text-decoration: underline;
 }
 
-.write-btn {
-	
-}
+
 
 .write-btn a {
 	width: 60px;
@@ -72,6 +70,27 @@ tbody td {
 	background-color: #6495ED;
 	color: #ffffff;
 }
+
+.page-btn a {
+	margin : 3px;
+	color: orange;
+	
+}
+.page-btn {
+	left: 400px;
+	top : 80px;
+	display: inline-block;
+}
+.prev-btn {
+	left: 390px;
+    top: 80px;
+}
+
+.next-btn {
+	left: 410px;
+    top: 80px;
+}
+
 /* ========================================== DETAIL ============================================= */
 .board {
 	width: 800px;

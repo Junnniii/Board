@@ -41,10 +41,28 @@ public class BoardController {
 	
 	
 	@GetMapping(value="/list")
-	public ModelAndView getList() throws ClassNotFoundException, SQLException {
+	public ModelAndView getList(String p, String q, String f) throws ClassNotFoundException, SQLException {
 		ModelAndView mv = new ModelAndView("board.list");
 		System.out.println("======================/list 요청이 왔습니다 ======================");
-		List<BoardViewEntity> list = service.getList(1, "", "");
+		
+		int page = 1;
+		if(p != null && p !="")
+			page = Integer.parseInt(p);
+		
+		String query = "";
+		if(q != null && q !="")
+			query = q;
+		
+		String field = "";
+		if(f != null && f !="")
+			field = f;
+		
+		System.out.println("page = "+page);
+		System.out.println("query = "+query);
+		System.out.println("field = "+field);
+		
+		List<BoardViewEntity> list = service.getList(page, field, query);
+		int count = service.countLines();
 		if(list.isEmpty()) {
 			System.out.println("출력할 데이터x");
 		}
@@ -52,11 +70,13 @@ public class BoardController {
 		{
 			for (BoardViewEntity entity : list)
 			{
-//				
-//				System.out.println(entity.getRegdate());
+				System.out.println();
 			}
 		}
+		
 		mv.addObject("list",list);
+		mv.addObject("count",count);
+		
 		return mv;
 	}
 	
@@ -69,7 +89,7 @@ public class BoardController {
 		
 		BoardEntity entity = service.getBoard(id);
 		int i = service.countHit(id);
-		System.out.println(entity.toString());
+		System.out.println(entity.toString()+"\n"+i);
 		
 		String realPath = context.getRealPath(path)+File.separator+entity.getFiles();
 		
