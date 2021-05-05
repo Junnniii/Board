@@ -1,4 +1,4 @@
-package jun.spring.prj.board1.service.jdbc;
+package jun.spring.prj.board1.entity;
 
 public class QueryVO {
 	private String field;

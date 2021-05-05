@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <main>
 
 	<div class="board">
@@ -9,7 +10,7 @@
 			<span class="info">작성자</span> <span class="board_info">${board.writer_id }</span>
 
 			<span class="info">조회수</span> <span class="board_info">${board.hit}</span>
-			<span class="info">작성일</span> <span class="board_info">${board.regdate}</span>
+			<span class="info">작성일</span> <span class="board_info"><fmt:formatDate value="${board.regdate}" pattern="yy-MM-dd hh:mm" type="date"/></span>
 
 		</div>
 		<div class="head-file">

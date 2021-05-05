@@ -62,7 +62,8 @@ public class BoardController {
 		System.out.println("field = "+field);
 		
 		List<BoardViewEntity> list = service.getList(page, field, query);
-		int count = service.countLines();
+		int count = service.countLines(field,query);
+		System.out.println("count : "+count);
 		if(list.isEmpty()) {
 			System.out.println("출력할 데이터x");
 		}
@@ -70,7 +71,7 @@ public class BoardController {
 		{
 			for (BoardViewEntity entity : list)
 			{
-				System.out.println();
+//				System.out.println(entity.toString());
 			}
 		}
 		

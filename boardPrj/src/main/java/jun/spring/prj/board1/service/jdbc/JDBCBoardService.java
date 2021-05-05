@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import jun.spring.prj.board1.entity.BoardEntity;
 import jun.spring.prj.board1.entity.BoardViewEntity;
+import jun.spring.prj.board1.entity.QueryVO;
 import jun.spring.prj.board1.service.BoardService;
 
 @Service
@@ -23,6 +24,7 @@ public class JDBCBoardService implements BoardService {
 	@Override
 	public List<BoardViewEntity> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
 		QueryVO qvo = new QueryVO(field, query, page);
+//		System.out.println(qvo.toString());
 		return sqlSessionTemplate.selectList("getList",qvo);
 	}
 
@@ -33,8 +35,9 @@ public class JDBCBoardService implements BoardService {
 	}
 	
 	@Override
-	public int countLines() throws ClassNotFoundException, SQLException {
-		return sqlSessionTemplate.selectOne("countLines");
+	public int countLines(String field, String query) throws ClassNotFoundException, SQLException {
+		QueryVO qvo = new QueryVO(field, query, 0);
+		return sqlSessionTemplate.selectOne("countLines",qvo);
 	}
 
 	@Override

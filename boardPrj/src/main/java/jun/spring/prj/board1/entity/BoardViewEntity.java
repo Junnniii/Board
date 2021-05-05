@@ -1,8 +1,6 @@
 package jun.spring.prj.board1.entity;
 
-import java.sql.Date;
-
-import org.springframework.web.multipart.MultipartFile;
+import java.sql.Timestamp;
 
 public class BoardViewEntity extends BoardEntity{
 	
@@ -11,7 +9,7 @@ public class BoardViewEntity extends BoardEntity{
 
 
 
-	public BoardViewEntity(int num,int id, String title, String writer_id, String content, Date regdate, int hit, String files,
+	public BoardViewEntity(int num,int id, String title, String writer_id, String content, Timestamp regdate, int hit, String files,
 			boolean pub ) {
 		super(id, title, writer_id, content, regdate, hit, files, pub);
 		this.num = num;

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <main>
 	<div class="u-container-style u-layout-cell u-size-42 u-layout-cell-2">
 		<div class="u-container-layout u-container-layout-2">
@@ -32,7 +33,7 @@
 							<td class="title text-align-left"><a
 								href="detail?id=${n.id}">${n.title}</a></td>
 							<td>${n.writer_id }</td>
-							<td>${n.regdate }</td>
+							<td><fmt:formatDate value="${n.regdate }" pattern="yyyy-MM-dd" type="date"/> </td>
 							<td>${n.hit }</td>
 						</tr>
 					</c:forEach>

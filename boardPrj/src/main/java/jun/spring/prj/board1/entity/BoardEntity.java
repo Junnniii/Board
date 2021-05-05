@@ -1,6 +1,6 @@
 package jun.spring.prj.board1.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 public class BoardEntity {
@@ -8,14 +8,14 @@ public class BoardEntity {
 	private Integer id;
 	private String title;
 	private String writer_id;
-	private Date regdate;
+	private Timestamp regdate;
 	private String content;
 	private Integer hit;
 	private String files;
 	private Boolean pub;
 	
 	
-	public BoardEntity(Integer id, String title, String writer_id, String content,Date regdate, Integer hit, String files,
+	public BoardEntity(Integer id, String title, String writer_id, String content,Timestamp regdate, Integer hit, String files,
 			Boolean pub) {
 		super();
 		this.id = id;
@@ -67,12 +67,12 @@ public class BoardEntity {
 	}
 
 
-	public Date getRegdate() {
+	public Timestamp getRegdate() {
 		return regdate;
 	}
 
 
-	public void setRegdate(Date regdate) {
+	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
 
