@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.goto-board {
+	position: relative;
+	top: 250px;
+	left: 50%;
+}
+.goto-board a{
+	background: #FFC8CD;
+	border : thick;
+	border-radius: 3em;
+	color : white;
+	padding: 50px;
+}
+

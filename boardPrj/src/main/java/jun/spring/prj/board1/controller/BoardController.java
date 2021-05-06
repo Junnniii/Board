@@ -7,11 +7,12 @@ import java.util.List;
 
 
 import javax.servlet.ServletContext;
-
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,26 @@ public class BoardController {
 	private ServletContext context;
 	protected String path = "/static/upload";
 	
+	
+// 	빠른 글 만들기 함수
+//		@GetMapping(value="/regmacro")
+//		public String regMacro() throws ClassNotFoundException, SQLException, InterruptedException {
+//			BoardEntity entity = new BoardEntity();
+//			int num = 0;
+//			for(int i=1 ; i<=300 ; i++) {
+//				entity.setTitle("테스트"+i);
+//				entity.setWriter_id("HJBOARD");
+//				entity.setContent("콘텐츠"+i+"\nThe form element that the textarea element is associated with (its \"form owner\"). The value of the attribute must be an ID of a form element in the same document. If this attribute is not specified, the textarea element must be a descendant of a form element. This attribute enables you to place textarea elements anywhere within a document, not just as descendants of their form elements.");
+//				num = service.insert(entity);
+//				entity.setTitle("게시글"+i);
+//				entity.setWriter_id("관리자");
+//				entity.setContent(i+"번째 게시글 내용입니다.");
+//				num = service.insert(entity);
+//				System.out.println("실행 "+i+"번째 완료 결과 : "+num);
+//				Thread.sleep(50);
+//			}
+//			return "";
+//		}
 	
 	@GetMapping(value="/list")
 	public ModelAndView getList(String p, String q, String f) throws ClassNotFoundException, SQLException {
@@ -82,15 +103,22 @@ public class BoardController {
 	}
 	
 	@GetMapping(value="/detail")
-	public ModelAndView getDetail(int id) throws ClassNotFoundException, SQLException
+	public ModelAndView getDetail(int id,@CookieValue(value="view") String cookie, HttpServletResponse response) throws ClassNotFoundException, SQLException
 	{
 		ModelAndView mv = new ModelAndView("board.detail");
 		
 		System.out.println("=====================/detail 요청이 왔습니다======================");
 		
 		BoardEntity entity = service.getBoard(id);
-		int i = service.countHit(id);
-		System.out.println(entity.toString()+"\n"+i);
+		
+		if(!(cookie.contains(String.valueOf(id))))
+		{
+			cookie += id +"/";
+			int i = service.countHit(id);
+			System.out.println(entity.toString()+"\n"+i);
+		}
+		response.addCookie(new Cookie("view", cookie));
+		
 		
 		String realPath = context.getRealPath(path)+File.separator+entity.getFiles();
 		
@@ -108,20 +136,7 @@ public class BoardController {
 		return mv;
 	}
 	
-// 빠른 글 만들기 함수
-//	@GetMapping(value="/regmacro")
-//	public String regMacro() throws ClassNotFoundException, SQLException, InterruptedException {
-//		BoardEntity entity = new BoardEntity();
-//		for(int i=1 ; i<=300 ; i++) {
-//			entity.setTitle("테스트"+i);
-//			entity.setWriter_id("HJBOARD");
-//			entity.setContent("콘텐츠"+i+"\nThe form element that the textarea element is associated with (its \"form owner\"). The value of the attribute must be an ID of a form element in the same document. If this attribute is not specified, the textarea element must be a descendant of a form element. This attribute enables you to place textarea elements anywhere within a document, not just as descendants of their form elements.");
-//			int num = service.insert(entity);
-//			System.out.println("실행 "+i+"번째 완료 결과 : "+num);
-//			Thread.sleep(50);
-//		}
-//		return "";
-//	}
+
 	
 	@PostMapping(value = "/regboard")
 	public String regBoard(@ModelAttribute BoardEntity entity,@RequestParam(value="upload_file") MultipartFile file) throws ClassNotFoundException, SQLException, IOException {
@@ -202,7 +217,7 @@ public class BoardController {
 		{
 			url = "detail?id="+entity.getId();
 		}
-		return "redirect:list";
+		return "redirect:/board/1/detail?id="+id;
 	}
 	
 	@GetMapping(value = "/delete")
@@ -212,5 +227,10 @@ public class BoardController {
 		int i = service.delete(id);
 		System.out.println("delete 실행결과 : "+i);
 		return "redirect:list";
+	}
+	
+	@GetMapping(value="/prev")
+	public String prev(int id) {
+		return "";
 	}
 }

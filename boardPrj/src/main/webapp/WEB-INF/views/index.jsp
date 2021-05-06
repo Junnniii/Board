@@ -1,21 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<table>
-		<c:forEach var="n" items="${list}">
-			<tr>
-				<td>${n.deptno}</td>
-				<td>${n.dname}</td>
-				<td>${n.loc}</td>
-			</tr>
-		</c:forEach>
-	</table>
-</body>
-</html>
+<main>
+	<div class="goto-board">
+		<a href="/board/1/list">게시판 바로가기</a>
+	</div>
+</main>
