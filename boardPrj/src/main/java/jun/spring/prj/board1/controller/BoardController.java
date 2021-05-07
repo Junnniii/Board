@@ -62,21 +62,14 @@ public class BoardController {
 //		}
 	
 	@GetMapping(value="/list")
-	public ModelAndView getList(String p, String q, String f) throws ClassNotFoundException, SQLException {
+	public ModelAndView getList(
+			@RequestParam(value = "p" , required = false, defaultValue = "1") int page, 
+			@RequestParam(value = "q" , required = false, defaultValue = "") String query,
+			@RequestParam(value = "f" , required = false, defaultValue = "제목")String field) 
+					throws ClassNotFoundException, SQLException {
 		ModelAndView mv = new ModelAndView("board.list");
 		System.out.println("======================/list 요청이 왔습니다 ======================");
 		
-		int page = 1;
-		if(p != null && p !="")
-			page = Integer.parseInt(p);
-		
-		String query = "";
-		if(q != null && q !="")
-			query = q;
-		
-		String field = "";
-		if(f != null && f !="")
-			field = f;
 		
 		System.out.println("page = "+page);
 		System.out.println("query = "+query);
@@ -119,6 +112,18 @@ public class BoardController {
 		}
 		response.addCookie(new Cookie("view", cookie));
 		
+		BoardEntity prevBoard = service.prevBoard(id);
+		BoardEntity nextBoard = service.nextBoard(id);
+		
+		if(prevBoard != null)
+		{
+			mv.addObject("prev",prevBoard);
+		}
+		
+		if(nextBoard != null)
+		{
+			mv.addObject("next",nextBoard);
+		}
 		
 		String realPath = context.getRealPath(path)+File.separator+entity.getFiles();
 		

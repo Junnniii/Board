@@ -5,6 +5,23 @@ main {
 	margin-top: 10px;
 }
 
+ul {
+	list-style: none;
+}
+
+.board-category li{
+	width: 100%;
+    height: 20%;
+    text-align: center;
+    padding: 10px;
+    background: #FFAF0A;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.board-category li a {
+	color:black;
+}
 table {
 	position: relative;
 	left: 100px;
@@ -73,8 +90,13 @@ tbody td {
 
 .page-btn a {
 	margin : 3px;
-	color: orange;
 	
+}
+.page-emphasis {
+	color : orange;
+}
+.page-nemp {
+	color : #73B2B4;
 }
 .page-btn {
 	left: 400px;
@@ -102,7 +124,6 @@ tbody td {
 .board-foot {
 	width: 800px;
 	margin-left: 30px;
-	border-top: 2px dashed #bcbcbc;
 }
 
 .board div {
@@ -150,20 +171,27 @@ tbody td {
 }
 
 .board-page {
+	text-align : center;
 	display: inline-block;
-	width: 50%;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 .board-btn {
 	display: inline-block;
-	width: 50%;
-	vertical-align: right;
+	width: 100%;
 }
-
-.board-foot a {
-	background-color: #008040;
+.board-btn div {
+	border-top : 2px dashed #bcbcbc;
+}
+.board-btn a {
+	text-align: center;
+}
+.board-page a {
+	
+	background-color: #DD78F6;
 	color: white;
-	padding: 1px;
+	padding: 8px;
 	margin: 3px;
 }
 
@@ -171,6 +199,11 @@ tbody td {
 	position: relative;
 	left: 550px;
 	width: 450px;
+}
+.center-board-title {
+	width: 90%;
+    display: inline-block;
+    text-align: center;
 }
 /*======================================== reg========================= */
 .reg-tag {

@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<c:set var="page" value="${(empty param.p) ? 1 : param.p }"/>
 <main>
 	<div class="u-container-style u-layout-cell u-size-42 u-layout-cell-2">
 		<div class="u-container-layout u-container-layout-2">
@@ -31,7 +33,7 @@
 						<tr>
 							<td>${n.id}</td>
 							<td class="title text-align-left"><a
-								href="detail?id=${n.id}">${n.title}</a></td>
+								href="detail?id=${n.id}&p=${param.p}&q=${param.q}&f=${param.f}">${n.title}</a></td>
 							<td>${n.writer_id }</td>
 							<td><fmt:formatDate value="${n.regdate }" pattern="yyyy-MM-dd" type="date"/> </td>
 							<td>${n.hit }</td>
@@ -46,16 +48,17 @@
 				
 			</table>
 			
-			<c:set var="page" value="${(empty param.p) ? 1 : param.p }"/>
+			
 			<c:set var="startNum" value="${page-(page-1)%5 }"/>
 			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"/>
+			
 			<c:if test="${startNum > 1}">
 				<a href="?p=${startNum-1}&f=${param.f}&q=${param.q}" class="prev-btn">이전</a>
 			</c:if>
 			<div class="page-btn">
 				<c:forEach var="i" begin="0" end="4">
 					<c:if test="${(startNum+i) <= lastNum }">
-						<a href="?p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a>
+						<a href="?p=${startNum+i}&f=${param.f}&q=${param.q}" class="${(page == startNum+i) ? 'page-emphasis' : 'page-nemp' }">${startNum+i}</a>
 					</c:if>
 				</c:forEach>	
 			</div>

@@ -64,6 +64,18 @@ public class JDBCBoardService implements BoardService {
 		return sqlSessionTemplate.delete("deleteBoard",id); 
 	}
 
+
+	@Override
+	public BoardEntity prevBoard(int id) throws ClassNotFoundException, SQLException {
+		return sqlSessionTemplate.selectOne("prevBoard",id);
+	}
+
+
+	@Override
+	public BoardEntity nextBoard(int id) throws ClassNotFoundException, SQLException {
+		return sqlSessionTemplate.selectOne("nextBoard",id);
+	}
+
 	
 
 

@@ -23,5 +23,7 @@ public interface BoardService {
 	
 	int delete(int id) throws ClassNotFoundException, SQLException;
 
+	BoardEntity prevBoard(int id) throws ClassNotFoundException, SQLException;
 	
+	BoardEntity nextBoard(int id) throws ClassNotFoundException, SQLException;
 }

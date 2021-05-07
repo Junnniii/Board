@@ -27,10 +27,10 @@
 				<ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
 					<li class="u-nav-item"><a
 						class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-3-dark-2 u-text-grey-90 u-text-hover-palette-2-base"
-						href="About.html" style="padding: 10px;">About</a></li>
+						href="/" style="padding: 10px;">About</a></li>
 					<li class="u-nav-item"><a
 						class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-3-dark-2 u-text-grey-90 u-text-hover-palette-2-base"
-						href="Contact.html" style="padding: 10px;">Contact</a></li>
+						href="/board/1/list" style="padding: 10px;">게시글</a></li>
 				</ul>
 			</div>
 			<div class="u-custom-menu u-nav-container-collapse">

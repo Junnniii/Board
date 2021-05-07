@@ -54,6 +54,24 @@
  		select * from board1 where id = #{id}
  	</select>
  	
+ 	<select id="nextBoard" resultType="BoardEntity">
+ 		<![CDATA[
+ 		select * from board1
+		where id = (
+    	select id from (select * from board1_view order by num desc) 
+   		where num < (select num from board1_view where id=#{id}) and rownum=1)
+   		]]> 
+ 	</select>
+ 	
+ 	<select id="prevBoard" resultType="BoardEntity">
+ 		<![CDATA[
+ 		select * from board1
+		where id = (
+    	select id from board1_view
+    	where num > (select num from board1_view where id=#{id}) and rownum=1) 
+    	]]>
+ 	</select>
+ 	
  	<select id="countLines" resultType="int" parameterType="QueryVO">
  		select count(num) from board1_view
  					<if test="field=='제목'">
@@ -88,4 +106,6 @@
  		board1 
  		where id = #{id}
  	</delete>
+ 	
+ 	
  </mapper>

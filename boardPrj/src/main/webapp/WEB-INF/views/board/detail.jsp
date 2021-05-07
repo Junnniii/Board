@@ -23,18 +23,38 @@
 
 
 	</div>
+	
 	<div class="board-foot">
 		<div class="board-page">
-		 <a href="">이전글</a>
-		 <a href="list">목록</a> 
-		 <a href="">다음글</a> 
+		<a href="edit?id=${board.id}">수정</a>
+		<a href="list?p=${param.p}&q=${param.q}&f=${param.f}">목록</a> 
+		<a href="delete?id=${board.id}">삭제</a>
+		 
 		</div>
 		<div class="board-btn">
-	
-			 
-			 <a href="edit?id=${board.id}">수정</a>
-	
-			 <a href="delete?id=${board.id}">삭제</a>
+			<div>
+				<span>다음글</span> 
+				<span class="center-board-title">
+				<c:if test="${next !=null}">
+				<a href="detail?id=${next.id}">${next.title} </a>
+				</c:if>
+				<c:if test="${next == null }">
+				다음글이 없습니다.
+				</c:if>
+				</span> 
+				
+			</div>	
+			<div>	 
+				<span>이전글</span> 
+				<span class="center-board-title">
+				<c:if test="${prev !=null }">
+				<a href="detail?id=${prev.id}"> ${prev.title} </a>
+				</c:if>
+				<c:if test="${prev == null }">
+				이전글이 없습니다.
+				</c:if>
+				</span>
+			</div>
 		</div>
 	</div>
 
