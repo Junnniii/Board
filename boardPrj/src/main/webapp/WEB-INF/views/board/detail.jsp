@@ -28,7 +28,7 @@
 		<div class="board-page">
 		<a href="edit?id=${board.id}">수정</a>
 		<a href="list?p=${param.p}&q=${param.q}&f=${param.f}">목록</a> 
-		<a href="delete?id=${board.id}">삭제</a>
+		<a href="delete?id=${board.id}&p=${param.p}">삭제</a>
 		 
 		</div>
 		<div class="board-btn">

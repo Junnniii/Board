@@ -2,39 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--  <mapper namespace="jun.spring.prj">
- 	<select id="selectAll" resultType="DeptDTO">
- 		select
- 		deptno, dname, loc
- 		from dept
- 	</select>
- 	
- 	<insert id="insert" parameterType="DeptDTO">
- 		insert
- 		into dept (deptno, dname, loc)
- 		values(#{deptno}, #{dname}, #{loc})
- 	</insert>
- 	 
- 	<select id="select" parameterType="DeptDTO" resultType="DeptDTO">
- 		select
- 		deptno, dname, loc
- 		from dept
- 		where
- 		deptno = #{deptno}
- 	</select>
- 	
- 	<update id="update" parameterType="DeptDTO">
- 		update
- 		dept set dname = #{dname}, loc=#{loc}
- 		where deptno = #{deptno}
- 	</update>
- 	
- 	<delete id="delete" parameterType="DeptDTO">
- 		delete
- 		from dept
- 		where deptno = #{deptno}
- 	</delete>
- </mapper> -->
+
  <mapper namespace="jun.spring.prj.board1">
  	<select id="getList" resultType="BoardViewEntity" parameterType="QueryVO">
  		select * from 

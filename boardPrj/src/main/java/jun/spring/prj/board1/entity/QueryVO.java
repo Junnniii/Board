@@ -1,5 +1,6 @@
 package jun.spring.prj.board1.entity;
 
+// 쿼리용 VO
 public class QueryVO {
 	private String field;
 	private String query;

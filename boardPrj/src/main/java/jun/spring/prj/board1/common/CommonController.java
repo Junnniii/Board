@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+// 다운로드 링크 클릭시 작동하는 컨트롤러
 @Controller("commonController")
 public class CommonController {
 	
@@ -22,6 +23,7 @@ public class CommonController {
 		
 		String realPath = context.getRealPath(path) + File.separator + filename;
 		File file = new File(realPath);
+//		DownloadView로 이동
 		mv.addObject("downloadFile", file);
 		mv.setViewName("downloadView");
 		return mv;

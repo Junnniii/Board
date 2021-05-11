@@ -2,7 +2,7 @@ package jun.spring.prj.board1.entity;
 
 import java.sql.Timestamp;
 
-
+// 기본 VO
 public class BoardEntity {
 	
 	private Integer id;

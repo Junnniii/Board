@@ -104,6 +104,7 @@ public class BoardController {
 		
 		BoardEntity entity = service.getBoard(id);
 		
+//		쿠키를 확인하여 조회수 중복 방지
 		if(!(cookie.contains(String.valueOf(id))))
 		{
 			cookie += id +"/";
@@ -146,6 +147,7 @@ public class BoardController {
 	@PostMapping(value = "/regboard")
 	public String regBoard(@ModelAttribute BoardEntity entity,@RequestParam(value="upload_file") MultipartFile file) throws ClassNotFoundException, SQLException, IOException {
 		
+//		파일이 선택되어 있을 경우 파일업로드
 		if(file.getSize() > 0)
 		{
 			String filename = file.getOriginalFilename();
@@ -187,10 +189,10 @@ public class BoardController {
 	@PostMapping(value="/editboard")
 	public String editBoard(@ModelAttribute BoardEntity entity,@RequestParam(value="upload_file")MultipartFile file,@RequestParam int id) throws ClassNotFoundException, SQLException, IllegalStateException, IOException
 	{
-		String url="redirect:";
 		System.out.println("============editBoard 요청 ===============");
 		entity.setId(id);
 		System.out.println(entity.toString());
+//		파일이 선택되어 있을경우 교체
 		if(file.getSize() > 0)
 		{
 			String filename = file.getOriginalFilename();
@@ -213,29 +215,18 @@ public class BoardController {
 		
 		int i = service.update(entity);
 		System.out.println("edit 실행결과 : "+i);
-		
-		if(entity.getId()==null || entity.getId()==0)
-		{
-			url += "list";
-		}
-		else 
-		{
-			url = "detail?id="+entity.getId();
-		}
+	
 		return "redirect:/board/1/detail?id="+id;
 	}
 	
 	@GetMapping(value = "/delete")
-	public String delete(int id) throws ClassNotFoundException, SQLException {
+	public String delete(int id,String p) throws ClassNotFoundException, SQLException {
 		System.out.println("================== delete 요청 ===================");
 		System.out.println("받은 id 값 : "+id);
 		int i = service.delete(id);
 		System.out.println("delete 실행결과 : "+i);
-		return "redirect:list";
+		return "redirect:/board/1/list?p="+p;
 	}
 	
-	@GetMapping(value="/prev")
-	public String prev(int id) {
-		return "";
-	}
+	
 }

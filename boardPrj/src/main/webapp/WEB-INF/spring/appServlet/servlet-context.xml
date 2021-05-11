@@ -11,6 +11,7 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 	
+	<!-- View Resolver 0순위-BeanNameViewResolver -->
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<property name="order" value="0" />
 	</bean>

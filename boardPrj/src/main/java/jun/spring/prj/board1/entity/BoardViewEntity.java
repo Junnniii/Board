@@ -1,7 +1,7 @@
 package jun.spring.prj.board1.entity;
 
 import java.sql.Timestamp;
-
+// 게시글 목록용 VO
 public class BoardViewEntity extends BoardEntity{
 	
 

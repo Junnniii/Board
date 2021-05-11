@@ -18,7 +18,7 @@
 		<property name="username" value="HJBOARD" />
 		<property name="password" value="1234" />
 	</bean>
-	<!--Bean 객체를 생성한다. -->
+
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!--Configuration 설정 파일을 연결한다. -->
