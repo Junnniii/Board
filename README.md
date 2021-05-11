@@ -9,6 +9,7 @@ spring mvc project for board
 - SPRING 5.2.9
 - JDK 1.8
 - ORACLE 11.2.0.2.0
+- Tiles 3.0.8
 
 css template : nicepage 소프트웨어(UI 레이아웃 등) 사용하여 tiles에 활용할 소스 추출
 
